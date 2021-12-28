@@ -1,9 +1,6 @@
-# Sanity Clean Content Studio
+# sanity-codegen-test
 
-Congratulations, you have now installed the Sanity Content Studio, an open source real-time content editing environment connected to the Sanity backend.
+Sanity starter with sanity-codegen.
 
-Now you can do the following things:
+Compare setup for 0.9 and 1.0-alpha: https://github.com/danmichaelo/sanity-codegen-issue/compare/test-v0.9x...test-v1.0alpha?expand=1
 
-- [Read “getting started” in the docs](https://www.sanity.io/docs/introduction/getting-started?utm_source=readme)
-- [Join the community Slack](https://slack.sanity.io/?utm_source=readme)
-- [Extend and build plugins](https://www.sanity.io/docs/content-studio/extending?utm_source=readme)
