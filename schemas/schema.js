@@ -1,6 +1,12 @@
 import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
+const buildingRef = {
+  name: "buildingRef",
+  type: "reference",
+  to: [{ type: "building" }],
+}
+
 const building = {
   name: "building",
   type: "document",
@@ -19,6 +25,10 @@ const room = {
     {
       name: "name",
       type: "string"
+    },
+    {
+      name: "building",
+      type: "buildingRef"
     }
   ]
 }
@@ -28,5 +38,6 @@ export default createSchema({
   types: schemaTypes.concat([
     building,
     room,
+    buildingRef,
   ]),
 })
