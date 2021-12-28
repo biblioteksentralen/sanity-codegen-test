@@ -1,4 +1,4 @@
-name: Build schema
+name: sanity-codegen 0.9.x
 on:
   - push
 
@@ -13,7 +13,7 @@ jobs:
         with:
           node-version: '14.x'
       - run: npm i
-      - run: npx sanity-codegen schema-codegen
+      - run: npx sanity-codegen
       - uses: actions/upload-artifact@v2
         with:
           name: schema-types.d.ts
