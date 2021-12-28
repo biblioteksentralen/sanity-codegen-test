@@ -1,5 +1,5 @@
+/// <reference path="../schemas/schema.d.ts" />
 import sanityClient from '@sanity/client'
-import { Building, Room } from '../schemas/schema';
 
 const client = sanityClient({
   projectId: 'uktf7x5x',
@@ -11,8 +11,8 @@ const client = sanityClient({
 
 type Stub<T> = Omit<T, "_id" | "_rev" | "_createdAt" | "_updatedAt">
 
-type BuildingStub = Stub<Building>
-type RoomStub = Stub<Room>
+type BuildingStub = Stub<Sanity.Schema.Building>
+type RoomStub = Stub<Sanity.Schema.Room>
 
 const main = async () => {
 

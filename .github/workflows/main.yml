@@ -13,7 +13,7 @@ jobs:
         with:
           node-version: '14.x'
       - run: npm i
-      - run: npx sanity-codegen
+      - run: npx sanity-codegen schema-codegen
       - uses: actions/upload-artifact@v2
         with:
           name: schema-types.d.ts
