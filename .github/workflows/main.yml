@@ -5,6 +5,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      SANITY_TOKEN: ${{ secrets.SANITY_TOKEN }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
@@ -16,3 +18,4 @@ jobs:
         with:
           name: schema-types.d.ts
           path: schema-types.d.ts
+      - run: node test.js
