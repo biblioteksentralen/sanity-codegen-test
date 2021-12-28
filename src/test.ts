@@ -1,5 +1,5 @@
 import sanityClient from '@sanity/client'
-import { Building } from './schema-types'
+import { Building, Room } from '../schemas/schema';
 
 const client = sanityClient({
   projectId: 'uktf7x5x',
@@ -9,20 +9,26 @@ const client = sanityClient({
   useCdn: false,
 })
 
+type Stub<T> = Omit<T, "_id" | "_rev" | "_createdAt" | "_updatedAt">
+
+type BuildingStub = Stub<Building>
+type RoomStub = Stub<Room>
+
 const main = async () => {
 
-  const building = await client.create<Building>({
+  const building = await client.create<BuildingStub>({
     _type: "building",
     name: "A building",
-  })
+  });
+  building._id
 
-  const room = await client.create({
+  const room = await client.create<RoomStub>({
     _type: "room",
     name: "A room",
-    building: { _type: "reference", ref: building._id }
+    building: { _type: "reference", _ref: building._id }
   })
 
-  console.info("Hello world")
+  console.info("✅ Documents created")
 
   const rooms = await client.getDocument(room._id)
   console.log(rooms)

@@ -18,4 +18,5 @@ jobs:
         with:
           name: schema-types.d.ts
           path: schema-types.d.ts
-      - run: node test.js
+      - run: tsc
+      - run: node dist/test.js
